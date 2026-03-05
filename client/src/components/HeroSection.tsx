@@ -4,7 +4,7 @@
  * 背景使用全球通信网络图
  * 品牌色 #00C896 发光效果
  */
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, User, Bot } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -13,8 +13,11 @@ const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpR
 
 const INSTALL_COMMAND = "Install PollyReach: https://pollyreach.ai/install.md";
 
+type Role = "human" | "agent";
+
 function InstallCommand() {
   const [copied, setCopied] = useState(false);
+  const [role, setRole] = useState<Role>("human");
 
   const handleCopy = async () => {
     try {
@@ -22,7 +25,6 @@ function InstallCommand() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // fallback
       const textarea = document.createElement("textarea");
       textarea.value = INSTALL_COMMAND;
       document.body.appendChild(textarea);
@@ -34,8 +36,39 @@ function InstallCommand() {
     }
   };
 
+  const ctaText =
+    role === "human"
+      ? "Send Your AI Agent to install PollyReach skill"
+      : "Install PollyReach Skill";
+
   return (
-    <div className="flex flex-col gap-3 max-w-xl">
+    <div className="flex flex-col gap-4 max-w-xl">
+      {/* Role Toggle */}
+      <div className="flex gap-3">
+        <button
+          onClick={() => setRole("human")}
+          className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
+            role === "human"
+              ? "bg-[#E53935] text-white shadow-[0_0_20px_rgba(229,57,53,0.3)]"
+              : "bg-transparent border border-white/20 text-white/60 hover:text-white hover:border-white/40"
+          }`}
+        >
+          <User className="h-4 w-4" />
+          I'm a Human
+        </button>
+        <button
+          onClick={() => setRole("agent")}
+          className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
+            role === "agent"
+              ? "bg-[#E53935] text-white shadow-[0_0_20px_rgba(229,57,53,0.3)]"
+              : "bg-transparent border border-white/20 text-white/60 hover:text-white hover:border-white/40"
+          }`}
+        >
+          <Bot className="h-4 w-4" />
+          I'm an Agent
+        </button>
+      </div>
+
       {/* Code block */}
       <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
         <div className="flex items-start gap-3 px-5 py-4">
@@ -45,6 +78,7 @@ function InstallCommand() {
           </code>
         </div>
       </div>
+
       {/* CTA Button */}
       <button
         onClick={handleCopy}
@@ -58,7 +92,7 @@ function InstallCommand() {
         ) : (
           <>
             <Copy className="h-4 w-4 shrink-0" />
-            Send Your AI Agent to install PollyReach skill
+            {ctaText}
           </>
         )}
       </button>
