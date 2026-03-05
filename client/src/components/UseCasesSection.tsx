@@ -1,10 +1,10 @@
 /*
  * Design: Orbital Infrastructure — 使用场景
- * 7 个典型场景卡片，配图标和说明
- * 两行布局：4+3
+ * 8 个典型场景卡片，配图标和说明
+ * 两行布局：4+4
  */
 import { motion } from "framer-motion";
-import { UtensilsCrossed, Hotel, Scissors, ParkingCircle, RotateCcw, Landmark, Globe } from "lucide-react";
+import { UtensilsCrossed, Hotel, Scissors, ParkingCircle, RotateCcw, Landmark, Globe, PiggyBank } from "lucide-react";
 
 const useCases = [
   {
@@ -48,6 +48,12 @@ const useCases = [
     title: "Cross-Language Calls",
     description: "Handle phone calls in foreign languages when traveling abroad — your Agent speaks the local tongue.",
     color: "#00C896",
+  },
+  {
+    icon: PiggyBank,
+    title: "Save Money",
+    description: "Cancel unwanted subscriptions, negotiate lower bills, and dispute overcharges — your Agent fights for your wallet.",
+    color: "#22D3EE",
   },
 ];
 
@@ -118,9 +124,7 @@ export default function UseCasesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className={`glass-card rounded-2xl p-5 group hover:-translate-y-1 transition-all duration-300 border border-white/5 hover:border-white/10 ${
-                i >= 4 ? "sm:col-span-1 lg:col-span-1" : ""
-              } ${i === 4 ? "lg:col-start-1" : ""}`}
+              className="glass-card rounded-2xl p-5 group hover:-translate-y-1 transition-all duration-300 border border-white/5 hover:border-white/10"
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
