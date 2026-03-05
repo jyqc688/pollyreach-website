@@ -4,12 +4,63 @@
  * 背景使用全球通信网络图
  * 品牌色 #00C896 发光效果
  */
-import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/hero-bg-WDmSAFtX8bvijQ28sCn3KN.webp";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/pollyreach-hero_80deb440.jpg";
+
+const INSTALL_COMMAND = "polly install pollyreach";
+
+function InstallCommand() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(INSTALL_COMMAND);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback
+      const textarea = document.createElement("textarea");
+      textarea.value = INSTALL_COMMAND;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  return (
+    <div className="inline-flex items-center gap-0 rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm max-w-md">
+      <div className="flex items-center gap-3 px-5 py-3">
+        <span className="text-white/40 select-none">$</span>
+        <code className="text-[#00C896] font-mono text-sm sm:text-base font-medium select-all">
+          {INSTALL_COMMAND}
+        </code>
+      </div>
+      <button
+        onClick={handleCopy}
+        className="flex items-center gap-2 px-5 py-3 bg-[#00C896] hover:bg-[#00B085] text-[#0D0D1A] font-semibold text-sm transition-all border-l border-[#00C896]/30 cursor-pointer"
+      >
+        {copied ? (
+          <>
+            <Check className="h-4 w-4" />
+            Copied!
+          </>
+        ) : (
+          <>
+            <Copy className="h-4 w-4" />
+            Copy
+          </>
+        )}
+      </button>
+    </div>
+  );
+}
 
 export default function HeroSection() {
   return (
@@ -58,24 +109,8 @@ export default function HeroSection() {
               让每一个 AI Agent 拥有属于自己的全球电话号码和真实打电话的能力
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                className="bg-[#00C896] hover:bg-[#00B085] text-[#0D0D1A] font-semibold px-7 h-12 rounded-xl shadow-[0_0_30px_rgba(0,200,150,0.3)] hover:shadow-[0_0_40px_rgba(0,200,150,0.5)] transition-all text-base"
-              >
-                Install Skill Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/15 text-white/80 hover:text-white hover:bg-white/5 px-7 h-12 rounded-xl text-base"
-              >
-                <BookOpen className="mr-2 h-4 w-4" />
-                View Docs
-              </Button>
-            </div>
+            {/* Install Command */}
+            <InstallCommand />
 
             {/* Stats */}
             <div className="flex gap-8 mt-12 pt-8 border-t border-white/5">
