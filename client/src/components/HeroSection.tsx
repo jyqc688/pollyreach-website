@@ -11,7 +11,7 @@ import { useState } from "react";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/hero-bg-WDmSAFtX8bvijQ28sCn3KN.webp";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/pollyreach-hero_80deb440.jpg";
 
-const INSTALL_COMMAND = "Read https://pollyreach.ai/install.md and follow the instructions to install PollyReach skill";
+const INSTALL_COMMAND = "Install PollyReach: https://pollyreach.ai/install.md";
 
 function InstallCommand() {
   const [copied, setCopied] = useState(false);
