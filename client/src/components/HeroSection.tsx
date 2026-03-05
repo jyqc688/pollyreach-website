@@ -11,7 +11,7 @@ import { useState } from "react";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/hero-bg-WDmSAFtX8bvijQ28sCn3KN.webp";
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/pollyreach-hero_80deb440.jpg";
 
-const INSTALL_COMMAND = "polly install pollyreach";
+const INSTALL_COMMAND = "Read https://pollyreach.ai/install.md and follow the instructions to install PollyReach skill";
 
 function InstallCommand() {
   const [copied, setCopied] = useState(false);
@@ -35,26 +35,30 @@ function InstallCommand() {
   };
 
   return (
-    <div className="inline-flex items-center gap-0 rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm max-w-md">
-      <div className="flex items-center gap-3 px-5 py-3">
-        <span className="text-white/40 select-none">$</span>
-        <code className="text-[#00C896] font-mono text-sm sm:text-base font-medium select-all">
-          {INSTALL_COMMAND}
-        </code>
+    <div className="flex flex-col gap-3 max-w-xl">
+      {/* Code block */}
+      <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm">
+        <div className="flex items-start gap-3 px-5 py-4">
+          <span className="text-white/40 select-none mt-0.5 shrink-0">$</span>
+          <code className="text-[#00C896] font-mono text-sm font-medium select-all leading-relaxed break-all">
+            {INSTALL_COMMAND}
+          </code>
+        </div>
       </div>
+      {/* CTA Button */}
       <button
         onClick={handleCopy}
-        className="flex items-center gap-2 px-5 py-3 bg-[#00C896] hover:bg-[#00B085] text-[#0D0D1A] font-semibold text-sm transition-all border-l border-[#00C896]/30 cursor-pointer"
+        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00C896] hover:bg-[#00B085] text-[#0D0D1A] font-semibold text-sm rounded-xl shadow-[0_0_30px_rgba(0,200,150,0.3)] hover:shadow-[0_0_40px_rgba(0,200,150,0.5)] transition-all cursor-pointer"
       >
         {copied ? (
           <>
-            <Check className="h-4 w-4" />
+            <Check className="h-4 w-4 shrink-0" />
             Copied!
           </>
         ) : (
           <>
-            <Copy className="h-4 w-4" />
-            Copy
+            <Copy className="h-4 w-4 shrink-0" />
+            Send Your AI Agent to install PollyReach skill
           </>
         )}
       </button>
