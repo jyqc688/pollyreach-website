@@ -143,10 +143,6 @@ export default function HeroSection() {
               PollyReach gives every AI Agent its own phone number and the ability to make real calls — no sign-up, no config, no limits.
             </p>
 
-            <p className="text-sm text-white/40 mb-8 max-w-xl">
-              让每一个 AI Agent 拥有属于自己的全球电话号码和真实打电话的能力
-            </p>
-
             {/* Install Command */}
             <InstallCommand />
 

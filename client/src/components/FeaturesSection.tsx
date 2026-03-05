@@ -10,35 +10,30 @@ const features = [
   {
     icon: UserX,
     title: "No Sign-Up Required",
-    titleZh: "无需注册或登录",
     description: "Your Agent starts making calls immediately. No accounts, no passwords, no friction.",
     color: "#00C896",
   },
   {
     icon: CreditCard,
     title: "No Pre-Payment",
-    titleZh: "无需提前充值",
     description: "Every Agent gets a daily free quota. Pay only when you exceed it — no upfront costs.",
     color: "#00A3FF",
   },
   {
     icon: KeyRound,
     title: "No API Key Needed",
-    titleZh: "无需配置 API Key",
     description: "Install the Skill and go. Authentication is handled automatically behind the scenes.",
     color: "#00E5A0",
   },
   {
     icon: Settings,
     title: "No Complex Config",
-    titleZh: "无需复杂配置",
     description: "Global phone numbers and multilingual Voice Agent capabilities are pre-configured and ready.",
     color: "#7B61FF",
   },
   {
     icon: ShieldCheck,
     title: "No Security Worries",
-    titleZh: "无需担心安全问题",
     description: "Enterprise-grade security with end-to-end encryption. Your Agent's calls are always protected.",
     color: "#FF6B35",
   },
@@ -105,7 +100,6 @@ export default function FeaturesSection() {
               <h3 className="font-[family-name:var(--font-heading)] text-lg font-semibold text-white mb-1.5">
                 {feature.title}
               </h3>
-              <p className="text-xs text-[#00C896]/60 mb-3">{feature.titleZh}</p>
               <p className="text-sm text-white/50 leading-relaxed">
                 {feature.description}
               </p>

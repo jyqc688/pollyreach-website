@@ -27,7 +27,6 @@ const capabilities = [
   {
     icon: Building2,
     title: "B2B Only — Safe by Design",
-    titleZh: "只联系 B 端",
     description: "PollyReach only contacts businesses and public institutions. Your Agent will never cold-call individuals.",
   },
 ];
@@ -84,9 +83,7 @@ export default function AgentNumberSection() {
               When your Agent first uses PollyReach, it receives a permanent, dedicated phone number — 
               creating a real-world identity for your AI assistant.
             </p>
-            <p className="text-sm text-white/30 mb-10">
-              当 Agent 第一次使用打电话功能时，PollyReach 会为其分配一个永久归属于该 Agent 的专属电话号码
-            </p>
+
 
             {/* Capability cards */}
             <div className="grid sm:grid-cols-2 gap-4">

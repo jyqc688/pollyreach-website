@@ -14,7 +14,6 @@ const plans = [
     price: "$0",
     period: "forever",
     description: "Get started with daily free calls. No credit card required.",
-    descriptionZh: "每日免费额度，无需提前充值",
     features: [
       "5 calls per day",
       "Dedicated phone number",
@@ -32,7 +31,6 @@ const plans = [
     price: "$0.05",
     period: "per minute",
     description: "Unlimited calls with premium features. Pay only for what you use.",
-    descriptionZh: "按需计费，超额部分按分钟收费",
     features: [
       "Unlimited calls",
       "Priority phone numbers",
@@ -111,8 +109,7 @@ export default function PricingSection() {
                 <span className="text-white/40 ml-2">/ {plan.period}</span>
               </div>
 
-              <p className="text-sm text-white/50 mb-1">{plan.description}</p>
-              <p className="text-xs text-[#00C896]/40 mb-8">{plan.descriptionZh}</p>
+              <p className="text-sm text-white/50 mb-8">{plan.description}</p>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature) => (

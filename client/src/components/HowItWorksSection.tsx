@@ -11,21 +11,18 @@ const steps = [
     icon: Download,
     step: "01",
     title: "Install the Skill",
-    titleZh: "Agent 安装 Skill",
     description: "Your Agent installs the PollyReach Skill with a single command. A complete cloud service powers everything behind the scenes.",
   },
   {
     icon: Smartphone,
     step: "02",
     title: "Get a Dedicated Number",
-    titleZh: "首次使用获得专属号码",
     description: "On first use, PollyReach assigns a permanent phone number to your Agent, along with a dedicated Voice Agent sub-instance.",
   },
   {
     icon: PhoneCall,
     step: "03",
     title: "Make Real Calls",
-    titleZh: "调用 Skill 完成真实通话",
     description: "Your Agent can now make real phone calls to businesses, government offices, and service providers worldwide.",
   },
 ];
@@ -91,7 +88,6 @@ export default function HowItWorksSection() {
                 <h3 className="font-[family-name:var(--font-heading)] text-xl font-semibold text-white mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs text-[#00C896]/50 mb-3">{step.titleZh}</p>
                 <p className="text-sm text-white/50 leading-relaxed max-w-xs mx-auto">
                   {step.description}
                 </p>
