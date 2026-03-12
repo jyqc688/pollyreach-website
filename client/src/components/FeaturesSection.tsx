@@ -16,7 +16,7 @@ const features = [
   {
     icon: CreditCard,
     title: "No Pre-Payment",
-    description: "Every Agent gets a daily free quota. Pay only when you exceed it — no upfront costs.",
+    description: "Every Agent gets a monthly free quota. Pay only when you exceed it — no upfront costs.",
     color: "#00A3FF",
   },
   {

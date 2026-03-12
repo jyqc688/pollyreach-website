@@ -13,7 +13,7 @@ const plans = [
     icon: Zap,
     price: "$0",
     period: "forever",
-    description: "Get started with daily free calls. No credit card required.",
+    description: "Get started with monthly free calls. No credit card required.",
     features: [
       "5 calls per day",
       "Dedicated phone number",
@@ -68,7 +68,7 @@ export default function PricingSection() {
             Start Free. <span className="text-gradient">Scale as You Grow.</span>
           </h2>
           <p className="text-lg text-white/50 max-w-2xl mx-auto">
-            No upfront costs. No hidden fees. Pay only when you exceed the daily free quota.
+            No upfront costs. No hidden fees. Pay only when you exceed the monthly free quota.
           </p>
         </motion.div>
 
