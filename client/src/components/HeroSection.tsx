@@ -133,10 +133,9 @@ export default function HeroSection() {
             </div>
 
             <h1 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-              Give Your Agent{" "}
-              <span className="text-gradient">a Voice.</span>
-              <br />
-              Anywhere in the World.
+              Give your Agent{" "}
+              <span className="text-gradient">a Voice</span>
+              {" "}and a Number.
             </h1>
 
             <p className="text-lg sm:text-xl text-white/60 leading-relaxed mb-4 max-w-xl">
