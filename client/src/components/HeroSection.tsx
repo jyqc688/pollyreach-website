@@ -46,17 +46,6 @@ function InstallCommand() {
       {/* Role Toggle */}
       <div className="flex gap-3">
         <button
-          onClick={() => setRole("human")}
-          className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
-            role === "human"
-              ? "bg-[#E53935] text-white shadow-[0_0_20px_rgba(229,57,53,0.3)]"
-              : "bg-transparent border border-white/20 text-white/60 hover:text-white hover:border-white/40"
-          }`}
-        >
-          <User className="h-4 w-4" />
-          I'm a Human
-        </button>
-        <button
           onClick={() => setRole("agent")}
           className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
             role === "agent"
@@ -66,6 +55,17 @@ function InstallCommand() {
         >
           <Bot className="h-4 w-4" />
           I'm an Agent
+        </button>
+        <button
+          onClick={() => setRole("human")}
+          className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
+            role === "human"
+              ? "bg-[#E53935] text-white shadow-[0_0_20px_rgba(229,57,53,0.3)]"
+              : "bg-transparent border border-white/20 text-white/60 hover:text-white hover:border-white/40"
+          }`}
+        >
+          <User className="h-4 w-4" />
+          I'm a Human
         </button>
       </div>
 
