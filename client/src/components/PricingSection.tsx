@@ -15,7 +15,8 @@ const plans = [
     period: "forever",
     description: "Get started with monthly free calls. No credit card required.",
     features: [
-      "5 calls per day",
+      "200 Credits per month",
+      "Inbound calls supported",
       "Dedicated phone number",
       "Multilingual voice support",
       "Standard call quality",
@@ -28,11 +29,12 @@ const plans = [
   {
     name: "Pro",
     icon: Crown,
-    price: "$0.05",
-    period: "per minute",
-    description: "Unlimited calls with premium features. Pay only for what you use.",
+    price: "$20",
+    period: "per month",
+    description: "2,000 Credits per month with premium features. Scale as you grow.",
     features: [
-      "Unlimited calls",
+      "2,000 Credits per month",
+      "Inbound calls supported",
       "Priority phone numbers",
       "All languages supported",
       "HD call quality",
