@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/polly-logo-full_31613fcd.jpeg";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663040690800/TQPpRy3UD32k7nEQ6SpKow/pollyreach-logo_3f5728b4.png";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -43,8 +43,11 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="PollyReach Logo"
-              className="h-10 w-auto max-w-[160px] object-contain transition-transform group-hover:scale-105 invert brightness-200"
+              className="h-9 w-9 rounded-lg object-cover transition-transform group-hover:scale-105"
             />
+            <span className="font-[family-name:var(--font-heading)] text-xl font-bold text-white tracking-tight">
+              PollyReach
+            </span>
           </a>
 
           {/* Desktop nav links */}
